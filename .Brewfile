@@ -1,191 +1,109 @@
-##############################################################
-# ~/.Brewfile - macOS Package Management                    #
-# Usage: brew bundle --global                                #
-# Cleanup: brew bundle cleanup --global                      #
-# Repo: https://github.com/fmurodov/dotfiles                 #
-##############################################################
-
-# Options
-cask_args appdir: '/Applications'
-
-# Taps
-tap 'siderolabs/tap'
-
-# Mac App Store CLI
-brew 'mas'
-
-#############################################################
-# Command Line Tools                                        #
-#############################################################
-
-# Shell & Terminal
-brew 'fish'         # Modern shell
-brew 'tmux'         # Terminal multiplexer
-
-# Core Utils
-brew 'bat'          # Better cat with syntax highlighting
-brew 'fzf'          # Fuzzy finder
-brew 'jq'           # JSON processor
-brew 'mc'           # Visual file manager
-brew 'rsync'        # File transfer
-brew 'tree'         # Directory visualization
-brew 'watch'        # Periodic command execution
-brew 'yq'           # YAML processor
-
-# Monitoring
-brew 'bmon'         # Bandwidth monitor
-brew 'gping'        # Interactive ping
-brew 'speedtest-cli' # Network speed test
-#brew 'ctop'        # Container metrics
-#brew 'goaccess'    # Web log analyzer
-
-# Productivity
-brew 'asciinema'    # Terminal recording
-brew 'fastfetch'    # System info
-brew 'rclone'       # Cloud storage sync
-#brew 'exiftool'    # EXIF metadata editor
-#brew 'figlet'      # ASCII art text
-#brew 'lolcat'      # Rainbow output
-#brew 'neofetch'    # System info (alternative)
-#brew 'pipes-sh'    # Screensaver
-#brew 'pv'          # Pipe viewer
-
-#############################################################
-# Development                                               #
-#############################################################
-
-# Version Control & Git
-brew 'git'
-brew 'gh'           # GitHub CLI
-brew 'lazygit'      # Git TUI
-#brew 'git-extras'  # Git utilities
-
-# Languages
-brew 'go'
-brew 'python'
-#brew 'gcc'         # C/C++ compiler
-
-# Containers & Orchestration
-brew 'docker'
-brew 'docker-compose'
-brew 'kubernetes-cli'
-brew 'lazydocker'   # Docker TUI
-brew 'podman'
-brew 'podman-compose'
-brew 'talosctl'     # Talos Kubernetes CLI
-cask 'podman-desktop'
-#brew 'kdash'       # Kubernetes TUI
-
-# DevOps
-brew 'ansible'
-brew 'cloudflared'  # Cloudflare Tunnel
-
-# API & HTTP
-brew 'curlie'       # HTTP client
-cask 'bruno'        # API testing
-
-# Editors & IDEs
-cask 'ghostty'      # Terminal emulator
-cask 'visual-studio-code'
-cask 'zed'
-#brew 'neovim'
-
-# Database
-cask 'tableplus'    # Database GUI
-
-# Kubernetes
-cask 'freelens'     # Kubernetes IDE
-
-# Network & Security
-brew 'nmap'         # Port scanner
-cask 'wireshark-app'# Network analyzer
-#brew 'bettercap'   # Network scanner
-
-# Security & Encryption
-#brew 'bcrypt'      # Encryption
-#brew 'git-crypt'   # Git encryption
-#brew 'openssl'     # SSL/TLS toolkit
-#cask 'gpg-suite'   # PGP encryption
-
-#############################################################
-# Desktop Applications                                      #
-#############################################################
-
-# Productivity
-cask '1password'    # Password manager
-cask 'raycast', args: { require_sha: false } # Launcher
-
-# Communication
-cask 'slack'
-cask 'telegram'
-cask 'whatsapp'
-cask 'zoom'
-#cask 'signal'      # Encrypted messenger
-
-# Browsers
-cask 'chromium'
-cask 'comet'        # AI-powered browser
-cask 'firefox'
-cask 'google-chrome'
-
-# Networking
-cask 'tailscale-app'  # VPN mesh network
-#cask 'mountain-duck' # Cloud storage mounter
-
-# Utilities
-cask 'keka'         # Archive manager
-
-# Creative
-#cask 'audacity'    # Audio editor
-#cask 'gimp'        # Image editor
-#cask 'inkscape'    # Vector graphics
-#cask 'obs'         # Screen recording
-#brew 'handbrake'   # Video transcoder
-#cask 'shotcut'     # Video editor
-
-#############################################################
-# macOS Enhancements                                        #
-#############################################################
-
-# System Tools
-brew 'iproute2mac'  # Linux-style networking commands
-
-# Window Management
-#brew 'yabai'       # Tiling window manager
-#brew 'skhd'        # Hotkey daemon
-
-# Menubar
-#cask 'anybar'      # Programmable menubar icons
-#cask 'hiddenbar'   # Hide menubar icons
-#cask 'stats'       # System monitor
-
-# Utilities
-#cask 'espanso'     # Text expander
-#brew 'lporg'       # Launchpad backup
-#brew 'm-cli'       # macOS management CLI
-#cask 'openinterminal' # Terminal from Finder
-#cask 'santa'       # Binary authorization
-#cask 'shottr'      # Screenshot tool
-#cask 'coteditor'   # Text editor
-#cask 'little-snitch' # Firewall
-
-# Quick Look Plugins
-#cask 'qlcolorcode'    # Code with syntax
-#cask 'qlimagesize'    # Image dimensions
-#cask 'qlmarkdown'     # Markdown files
-#cask 'qlprettypatch'  # Patches/diffs
-#cask 'qlstephen'      # Plain text files
-#cask 'qlvideo'        # Video previews
-#cask 'quicklook-csv'  # CSV files
-#cask 'quicklook-json', args: { require_sha: false } # JSON
-#cask 'quicklookapk', args: { require_sha: false }   # APK files
-#cask 'webpquicklook', args: { require_sha: false }  # WebP images
-
-# Fonts
-#tap 'homebrew/cask-fonts'
-#cask 'font-fira-code'
-#cask 'font-hack'
-#cask 'font-inconsolata'
-#cask 'font-meslo-lg-nerd-font'
-
-# EOF
+tap "fluxcd/tap"
+tap "slp/krunkit"
+brew "curlie"
+brew "fish"
+brew "gemini-cli"
+brew "gh"
+brew "jq"
+brew "kubecm"
+brew "kubeconform"
+brew "kubernetes-cli"
+brew "kubectx"
+brew "kustomize"
+brew "midnight-commander"
+brew "nmap"
+brew "pipx"
+brew "podman"
+brew "podman-compose"
+brew "podman-tui"
+brew "stern"
+brew "talosctl"
+brew "watch"
+brew "yq"
+brew "fluxcd/tap/flux"
+brew "slp/krunkit/krunkit"
+cask "arduino-ide"
+cask "balenaetcher"
+cask "bambu-studio"
+cask "discord"
+cask "freelens"
+cask "ghostty"
+cask "google-chrome"
+cask "kitty"
+cask "podman-desktop"
+cask "raspberry-pi-imager"
+cask "tailscale-app"
+cask "telegram-desktop"
+cask "visual-studio-code"
+cask "wireshark-app"
+cask "zed"
+cask "zenmap"
+vscode "aaron-bond.better-comments"
+vscode "adamhartford.vscode-base64"
+vscode "azaugg.vscode-cfengine"
+vscode "bbenoist.nix"
+vscode "bbenoist.vagrant"
+vscode "bierner.markdown-mermaid"
+vscode "davidanson.vscode-markdownlint"
+vscode "devmike.mikrotik-routeros-script"
+vscode "docker.docker"
+vscode "donjayamanne.githistory"
+vscode "eamodio.gitlens"
+vscode "espressif.esp-idf-extension"
+vscode "ex3ndr.llama-coder"
+vscode "fnando.linter"
+vscode "foxundermoon.shell-format"
+vscode "github.copilot"
+vscode "github.copilot-chat"
+vscode "github.vscode-github-actions"
+vscode "gitlab.gitlab-workflow"
+vscode "golang.go"
+vscode "hashicorp.terraform"
+vscode "ibm.output-colorizer"
+vscode "jakebathman.mysql-syntax"
+vscode "jamiewoodio.cisco"
+vscode "jinliming2.vscode-go-template"
+vscode "kamikillerto.vscode-colorize"
+vscode "keesschollaart.vscode-home-assistant"
+vscode "korekontrol.saltstack"
+vscode "mads-hartmann.bash-ide-vscode"
+vscode "marcostazi.vs-code-vagrantfile"
+vscode "mechatroner.rainbow-csv"
+vscode "mikestead.dotenv"
+vscode "moshfeu.compare-folders"
+vscode "ms-azuretools.vscode-containers"
+vscode "ms-azuretools.vscode-docker"
+vscode "ms-kubernetes-tools.vscode-kubernetes-tools"
+vscode "ms-python.debugpy"
+vscode "ms-python.python"
+vscode "ms-python.vscode-pylance"
+vscode "ms-python.vscode-python-envs"
+vscode "ms-vscode-remote.remote-containers"
+vscode "ms-vscode-remote.remote-ssh"
+vscode "ms-vscode-remote.remote-ssh-edit"
+vscode "ms-vscode.cmake-tools"
+vscode "ms-vscode.cpptools"
+vscode "ms-vscode.cpptools-extension-pack"
+vscode "ms-vscode.cpptools-themes"
+vscode "ms-vscode.hexeditor"
+vscode "ms-vscode.makefile-tools"
+vscode "ms-vscode.remote-explorer"
+vscode "quicktype.quicktype"
+vscode "redhat.java"
+vscode "redhat.vscode-yaml"
+vscode "tamasfe.even-better-toml"
+vscode "tatsy.vscode-3d-preview"
+vscode "timonwong.shellcheck"
+vscode "tinygo.vscode-tinygo"
+vscode "visualstudioexptteam.intellicode-api-usage-examples"
+vscode "visualstudioexptteam.vscodeintellicode"
+vscode "vscjava.migrate-java-to-azure"
+vscode "vscjava.vscode-gradle"
+vscode "vscjava.vscode-java-debug"
+vscode "vscjava.vscode-java-dependency"
+vscode "vscjava.vscode-java-pack"
+vscode "vscjava.vscode-java-test"
+vscode "vscjava.vscode-java-upgrade"
+vscode "vscjava.vscode-maven"
+vscode "weaveworks.vscode-gitops-tools"
+vscode "zainchen.json"
