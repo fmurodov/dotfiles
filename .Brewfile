@@ -6,6 +6,7 @@
 ##############################################################
 
 # Options
+COMPUTER_NAME = `scutil --get LocalHostName`.strip
 cask_args appdir: '/Applications'
 
 # Taps
@@ -32,7 +33,7 @@ brew 'rsync'        # File transfer
 brew 'tree'         # Directory visualization
 brew 'watch'        # Periodic command execution
 brew 'yq'           # YAML processor
-brew "pipx"
+brew "pipx" if COMPUTER_NAME == "fmurodov-macbookair"
 
 # Monitoring
 brew 'bmon'         # Bandwidth monitor
@@ -123,12 +124,12 @@ cask 'wireshark-app'# Network analyzer
 #############################################################
 
 # Productivity
-cask '1password' if Socket.gethostname == "fmurodov-pro"
+cask '1password' if COMPUTER_NAME == "fmurodov-pro"
 cask 'raycast', args: { require_sha: false } # Launcher
 
 # Communication
 cask "discord"
-cask 'slack' if Socket.gethostname == "fmurodov-pro"
+cask 'slack' if COMPUTER_NAME == "fmurodov-pro"
 cask 'telegram'
 cask 'whatsapp'
 cask 'zoom'
