@@ -44,6 +44,7 @@ brew 'speedtest-cli' # Network speed test
 
 # Productivity
 brew 'asciinema'    # Terminal recording
+brew 'difftastic'   # Diff that understands syntax
 brew 'fastfetch'    # System info
 brew 'rclone'       # Cloud storage sync
 #brew 'exiftool'    # EXIF metadata editor
@@ -103,6 +104,8 @@ cask 'tableplus'    # Database GUI
 cask 'freelens'     # Kubernetes IDE
 brew 'stern'        # Multi-pod log tailing
 brew 'fluxcd/tap/flux' # GitOps toolkit
+brew 'helm'         # Kubernetes package manager
+brew 'k9s'          # Kubernetes CLI
 brew 'kubecm'       # Kubeconfig manager
 brew 'kubeconform'  # Kubernetes manifest validator
 brew 'kubectx'      # Context and namespace switcher
