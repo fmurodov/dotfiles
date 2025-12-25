@@ -123,12 +123,12 @@ cask 'wireshark-app'# Network analyzer
 #############################################################
 
 # Productivity
-# cask '1password'    # Password manager
+cask '1password' if Socket.gethostname == "fmurodov-pro"
 cask 'raycast', args: { require_sha: false } # Launcher
 
 # Communication
 cask "discord"
-# cask 'slack'
+cask 'slack' if Socket.gethostname == "fmurodov-pro"
 cask 'telegram'
 cask 'whatsapp'
 cask 'zoom'
