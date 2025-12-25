@@ -11,7 +11,7 @@ cask_args appdir: '/Applications'
 
 # Taps
 tap 'siderolabs/tap'
-tap "fluxcd/tap"
+tap 'fluxcd/tap'
 
 # Mac App Store CLI
 brew 'mas'
@@ -28,12 +28,12 @@ brew 'tmux'         # Terminal multiplexer
 brew 'bat'          # Better cat with syntax highlighting
 brew 'fzf'          # Fuzzy finder
 brew 'jq'           # JSON processor
-brew "midnight-commander" # Visual file manager
+brew 'midnight-commander' # Visual file manager
 brew 'rsync'        # File transfer
 brew 'tree'         # Directory visualization
 brew 'watch'        # Periodic command execution
 brew 'yq'           # YAML processor
-brew "pipx" if COMPUTER_NAME == "fmurodov-macbookair"
+brew 'pipx' if COMPUTER_NAME == 'fmurodov-macbookair' # Python package installer
 
 # Monitoring
 brew 'bmon'         # Bandwidth monitor
@@ -77,7 +77,7 @@ brew 'podman'
 brew 'podman-compose'
 brew 'talosctl'     # Talos Kubernetes CLI
 cask 'podman-desktop'
-brew "podman-tui"
+brew 'podman-tui'   # Podman terminal UI
 #brew 'kdash'       # Kubernetes TUI
 
 # DevOps
@@ -90,23 +90,23 @@ cask 'bruno'        # API testing
 
 # Editors & IDEs
 cask 'ghostty'      # Terminal emulator
-cask "kitty"
+cask 'kitty'        # GPU-based terminal emulator
 cask 'visual-studio-code'
 cask 'zed'
 #brew 'neovim'
-cask "arduino-ide"
+cask 'arduino-ide'  # Arduino development IDE
 
 # Database
 cask 'tableplus'    # Database GUI
 
 # Kubernetes
 cask 'freelens'     # Kubernetes IDE
-brew "stern"
-brew "fluxcd/tap/flux"
-brew "kubecm"
-brew "kubeconform"
-brew "kubectx"
-brew "kustomize"
+brew 'stern'        # Multi-pod log tailing
+brew 'fluxcd/tap/flux' # GitOps toolkit
+brew 'kubecm'       # Kubeconfig manager
+brew 'kubeconform'  # Kubernetes manifest validator
+brew 'kubectx'      # Context and namespace switcher
+brew 'kustomize'    # Kubernetes configuration customization
 
 # Network & Security
 brew 'nmap'         # Port scanner
@@ -124,12 +124,12 @@ cask 'wireshark-app'# Network analyzer
 #############################################################
 
 # Productivity
-cask '1password' if COMPUTER_NAME == "fmurodov-pro"
+cask '1password' if COMPUTER_NAME == 'fmurodov-pro' # Password manager
 cask 'raycast', args: { require_sha: false } # Launcher
 
 # Communication
-cask "discord"
-cask 'slack' if COMPUTER_NAME == "fmurodov-pro"
+cask 'discord'      # Voice and text chat
+cask 'slack' if COMPUTER_NAME == 'fmurodov-pro'
 cask 'telegram'
 cask 'whatsapp'
 cask 'zoom'
@@ -147,12 +147,12 @@ cask 'tailscale-app'  # VPN mesh network
 
 # Utilities
 cask 'keka'         # Archive manager
-cask "balenaetcher"
-cask "raspberry-pi-imager"
+cask 'balenaetcher' # USB flash tool
+cask 'raspberry-pi-imager' # Raspberry Pi SD card writer
 
 # Creative
 #cask 'audacity'    # Audio editor
-cask "bambu-studio"
+cask 'bambu-studio' # 3D printing slicer
 #cask 'gimp'        # Image editor
 #cask 'inkscape'    # Vector graphics
 #cask 'obs'         # Screen recording
@@ -204,49 +204,75 @@ brew 'iproute2mac'  # Linux-style networking commands
 #cask 'font-inconsolata'
 #cask 'font-meslo-lg-nerd-font'
 
-# Visual Studio Code
-vscode "aaron-bond.better-comments"
-vscode "adamhartford.vscode-base64"
-vscode "bbenoist.vagrant"
-vscode "bierner.markdown-mermaid"
-vscode "davidanson.vscode-markdownlint"
-vscode "docker.docker"
-vscode "donjayamanne.githistory"
-vscode "eamodio.gitlens"
-vscode "foxundermoon.shell-format"
-vscode "github.vscode-github-actions"
-vscode "gitlab.gitlab-workflow"
-vscode "golang.go"
-vscode "hashicorp.terraform"
-vscode "ibm.output-colorizer"
-vscode "kamikillerto.vscode-colorize"
-vscode "keesschollaart.vscode-home-assistant"
-vscode "korekontrol.saltstack"
-vscode "mads-hartmann.bash-ide-vscode"
-vscode "marcostazi.vs-code-vagrantfile"
-vscode "mechatroner.rainbow-csv"
-vscode "mikestead.dotenv"
-vscode "moshfeu.compare-folders"
-vscode "ms-azuretools.vscode-containers"
-vscode "ms-azuretools.vscode-docker"
-vscode "ms-kubernetes-tools.vscode-kubernetes-tools"
-vscode "ms-python.python"
-vscode "ms-vscode-remote.remote-containers"
-vscode "ms-vscode-remote.remote-ssh"
-vscode "ms-vscode-remote.remote-ssh-edit"
-vscode "ms-vscode.cmake-tools"
-vscode "ms-vscode.cpptools"
-vscode "ms-vscode.cpptools-extension-pack"
-vscode "ms-vscode.cpptools-themes"
-vscode "ms-vscode.hexeditor"
-vscode "ms-vscode.makefile-tools"
-vscode "ms-vscode.remote-explorer"
-vscode "quicktype.quicktype"
-vscode "redhat.java"
-vscode "redhat.vscode-yaml"
-vscode "tatsy.vscode-3d-preview"
-vscode "timonwong.shellcheck"
-vscode "weaveworks.vscode-gitops-tools"
-vscode "zainchen.json"
+# Visual Studio Code Extensions
+
+# Git & Version Control
+vscode 'donjayamanne.githistory'
+vscode 'eamodio.gitlens'
+vscode 'github.vscode-github-actions'
+vscode 'gitlab.gitlab-workflow'
+
+# Containers & Kubernetes
+vscode 'docker.docker'
+vscode 'ms-azuretools.vscode-containers'
+vscode 'ms-azuretools.vscode-docker'
+vscode 'ms-kubernetes-tools.vscode-kubernetes-tools'
+
+# Remote Development
+vscode 'ms-vscode-remote.remote-containers'
+vscode 'ms-vscode-remote.remote-ssh'
+vscode 'ms-vscode-remote.remote-ssh-edit'
+vscode 'ms-vscode.remote-explorer'
+
+# Languages - Go
+vscode 'golang.go'
+
+# Languages - Python
+vscode 'ms-python.python'
+
+# Languages - C/C++
+vscode 'ms-vscode.cmake-tools'
+vscode 'ms-vscode.cpptools'
+vscode 'ms-vscode.cpptools-extension-pack'
+vscode 'ms-vscode.cpptools-themes'
+vscode 'ms-vscode.makefile-tools'
+
+# Languages - Java
+vscode 'redhat.java'
+
+# DevOps & Infrastructure
+vscode 'hashicorp.terraform'
+vscode 'korekontrol.saltstack'
+vscode 'weaveworks.vscode-gitops-tools'
+
+# Shell & Scripting
+vscode 'foxundermoon.shell-format'
+vscode 'mads-hartmann.bash-ide-vscode'
+vscode 'timonwong.shellcheck'
+
+# Configuration & Data Formats
+vscode 'mechatroner.rainbow-csv'
+vscode 'mikestead.dotenv'
+vscode 'redhat.vscode-yaml'
+vscode 'quicktype.quicktype'
+vscode 'zainchen.json'
+
+# Markdown & Documentation
+vscode 'bierner.markdown-mermaid'
+vscode 'davidanson.vscode-markdownlint'
+
+# Virtualization & Development Tools
+vscode 'bbenoist.vagrant'
+vscode 'marcostazi.vs-code-vagrantfile'
+
+# Utilities & Helpers
+vscode 'aaron-bond.better-comments'
+vscode 'adamhartford.vscode-base64'
+vscode 'ibm.output-colorizer'
+vscode 'kamikillerto.vscode-colorize'
+vscode 'keesschollaart.vscode-home-assistant'
+vscode 'moshfeu.compare-folders'
+vscode 'ms-vscode.hexeditor'
+vscode 'tatsy.vscode-3d-preview'
 
 # EOF
