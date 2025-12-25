@@ -13,7 +13,7 @@ Personal macOS configuration and development environment setup.
 
 ```bash
 # Clone repository
-git clone https://github.com/fmurodov/dotfiles.git ~/.dotfiles
+git clone git@github.com:fmurodov/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 
 # Link Brewfile
