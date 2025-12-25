@@ -277,5 +277,7 @@ vscode 'keesschollaart.vscode-home-assistant'
 vscode 'moshfeu.compare-folders'
 vscode 'ms-vscode.hexeditor'
 vscode 'tatsy.vscode-3d-preview'
+vscode 'github.copilot'
+vscode 'github.copilot-chat'
 
 # EOF
