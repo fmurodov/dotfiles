@@ -116,6 +116,7 @@ brew 'kustomize'    # Kubernetes configuration customization
 brew 'nmap'         # Port scanner
 cask 'wireshark-app'# Network analyzer
 #brew 'bettercap'   # Network scanner
+cask 'wifiman'      # Network monitoring and troubleshooting
 
 # Security & Encryption
 brew 'sops'         # Secrets management
