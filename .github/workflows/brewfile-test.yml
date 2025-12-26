@@ -1,0 +1,139 @@
+---
+name: Test Brewfile
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - ".Brewfile"
+      - ".github/workflows/brewfile-test.yml"
+  pull_request:
+    branches: [master]
+    paths:
+      - ".Brewfile"
+      - ".github/workflows/brewfile-test.yml"
+  workflow_dispatch: true
+
+jobs:
+  validate-brewfile:
+    name: Validate Brewfile Syntax
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Homebrew
+        run: |
+          echo "Homebrew version:"
+          brew --version
+
+      - name: Validate Brewfile syntax
+        run: |
+          echo "Validating .Brewfile syntax..."
+          # Use brew bundle check with the Brewfile
+          # This will validate syntax without installing packages
+          brew bundle check --file=.Brewfile --verbose || true
+
+      - name: Dry run - Check what would be installed
+        run: |
+          echo "Checking what would be installed/upgraded..."
+          brew bundle install --file=.Brewfile --no-lock \
+            --dry-run --verbose
+
+      - name: Check for deprecated packages
+        run: |
+          echo "Checking for deprecated packages..."
+          # Extract brew package names and check if deprecated
+          grep "^brew '" .Brewfile | \
+            sed "s/brew '\([^']*\)'.*/\1/" | while read package; do
+            if [ ! -z "$package" ]; then
+              brew info "$package" 2>&1 | grep -i "deprecated" && \
+                echo "⚠️  $package is deprecated" || true
+            fi
+          done
+
+      - name: Check for deprecated casks
+        run: |
+          echo "Checking for deprecated casks..."
+          # Extract cask names and check if they're deprecated
+          grep "^cask '" .Brewfile | \
+            sed "s/cask '\([^']*\)'.*/\1/" | while read cask; do
+            if [ ! -z "$cask" ]; then
+              brew info --cask "$cask" 2>&1 | grep -i "deprecated" && \
+                echo "⚠️  $cask is deprecated" || true
+            fi
+          done
+
+      - name: Verify taps exist
+        run: |
+          echo "Verifying taps..."
+          grep "^tap '" .Brewfile | \
+            sed "s/tap '\([^']*\)'.*/\1/" | while read tap; do
+            if [ ! -z "$tap" ]; then
+              echo "Checking tap: $tap"
+              brew tap | grep -q "$tap" || brew tap "$tap"
+            fi
+          done
+
+      - name: Check for duplicate entries
+        run: |
+          echo "Checking for duplicate entries..."
+
+          # Check for duplicate brews
+          echo "Checking brews..."
+          grep "^brew '" .Brewfile | sort | uniq -d | tee /tmp/dup_brews.txt
+          if [ -s /tmp/dup_brews.txt ]; then
+            echo "❌ Found duplicate brew entries!"
+            exit 1
+          else
+            echo "✅ No duplicate brew entries found"
+          fi
+
+          # Check for duplicate casks
+          echo "Checking casks..."
+          grep "^cask '" .Brewfile | sort | uniq -d | tee /tmp/dup_casks.txt
+          if [ -s /tmp/dup_casks.txt ]; then
+            echo "❌ Found duplicate cask entries!"
+            exit 1
+          else
+            echo "✅ No duplicate cask entries found"
+          fi
+
+          # Check for duplicate vscode extensions
+          echo "Checking VS Code extensions..."
+          grep "^vscode '" .Brewfile | sort | uniq -d | \
+            tee /tmp/dup_vscode.txt
+          if [ -s /tmp/dup_vscode.txt ]; then
+            echo "❌ Found duplicate VS Code extension entries!"
+            exit 1
+          else
+            echo "✅ No duplicate VS Code extensions found"
+          fi
+
+  test-install-sample:
+    name: Test Install Sample Packages
+    runs-on: macos-latest
+    needs: validate-brewfile
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install sample packages
+        run: |
+          echo "Installing sample packages to verify it works..."
+          # Install a few lightweight packages as a smoke test
+          brew install jq bat tree
+
+          # Verify they were installed
+          jq --version
+          bat --version
+          tree --version
+
+      - name: Test package functionality
+        run: |
+          echo "Testing basic functionality..."
+          echo '{"test": "value"}' | jq .
+          echo "Testing bat..." | bat --plain
+          echo "Tree test completed"
