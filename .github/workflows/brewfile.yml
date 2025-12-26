@@ -1,0 +1,24 @@
+name: Test Brewfile
+
+on:
+  push:
+    paths:
+      - ".Brewfile*"
+      - ".github/workflows/brewfile.yml"
+  pull_request:
+    paths:
+      - "Brewfile*"
+
+jobs:
+  test-brewfile:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Homebrew dependencies
+        run: brew bundle install --file=.Brewfile
+
+      - name: Verify installation
+        run: brew bundle check --file=.Brewfile
