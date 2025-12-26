@@ -101,6 +101,7 @@ cask 'arduino-ide'  # Arduino development IDE
 cask 'tableplus'    # Database GUI
 
 # Kubernetes
+brew 'cilium-cli'   # Cilium client
 cask 'freelens'     # Kubernetes IDE
 brew 'stern'        # Multi-pod log tailing
 brew 'fluxcd/tap/flux' # GitOps toolkit
