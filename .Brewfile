@@ -118,6 +118,7 @@ cask 'wireshark-app'# Network analyzer
 #brew 'bettercap'   # Network scanner
 
 # Security & Encryption
+brew 'sops'         # Secrets management
 #brew 'bcrypt'      # Encryption
 #brew 'git-crypt'   # Git encryption
 #brew 'openssl'     # SSL/TLS toolkit
