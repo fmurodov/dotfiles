@@ -32,6 +32,7 @@ brew 'midnight-commander' # Visual file manager
 brew 'rsync'        # File transfer
 brew 'tree'         # Directory visualization
 brew 'watch'        # Periodic command execution
+brew 'yamllint'     # YAML linter
 brew 'yq'           # YAML processor
 brew 'pipx' if COMPUTER_NAME == 'fmurodov-macbookair' # Python package installer
 
