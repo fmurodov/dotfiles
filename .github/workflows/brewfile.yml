@@ -41,8 +41,8 @@ jobs:
         run: |
           echo "Checking if all formulae exist..."
 
-          # Extract brew packages - remove quotes and clean up
-          BREWS=$(grep -oE 'brew\s+"[^"]+"' .Brewfile | sed -E 's/brew\s+"([^"]+)"/\1/')
+          # Extract brew packages - simpler approach
+          BREWS=$(grep -oE 'brew "[^"]+"' .Brewfile | cut -d'"' -f2)
 
           if [ -n "$BREWS" ]; then
             FAILED=0
@@ -62,8 +62,8 @@ jobs:
 
           echo -e "\nChecking if all casks exist..."
 
-          # Extract cask packages - remove quotes and clean up
-          CASKS=$(grep -oE 'cask\s+"[^"]+"' .Brewfile | sed -E 's/cask\s+"([^"]+)"/\1/')
+          # Extract cask packages - simpler approach
+          CASKS=$(grep -oE 'cask "[^"]+"' .Brewfile | cut -d'"' -f2)
 
           if [ -n "$CASKS" ]; then
             FAILED=0
