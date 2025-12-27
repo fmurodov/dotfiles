@@ -1,5 +1,5 @@
 ##############################################################
-# ~/.Brewfile - macOS Package Management                    #
+# ~/Brewfile - macOS Package Management                    #
 # Usage: brew bundle --global                                #
 # Cleanup: brew bundle cleanup --global                      #
 # Repo: https://github.com/fmurodov/dotfiles                 #

@@ -17,7 +17,7 @@ git clone git@github.com:fmurodov/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 
 # Link Brewfile
-ln -sf ~/.dotfiles/.Brewfile ~/.Brewfile
+ln -sf ~/.dotfiles/Brewfile ~/.Brewfile
 
 # Install packages
 brew bundle --global
@@ -37,7 +37,7 @@ brew bundle cleanup --global
 
 ## What's Included
 
-All packages documented in [.Brewfile](.Brewfile):
+All packages documented in [Brewfile](Brewfile):
 - Command line tools and utilities
 - Development environments and DevOps tools
 - Desktop applications

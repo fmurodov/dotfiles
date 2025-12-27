@@ -3,11 +3,11 @@ name: Test Brewfile
 on:
   push:
     paths:
-      - ".Brewfile*"
+      - "Brewfile*"
       - ".github/workflows/brewfile.yml"
   pull_request:
     paths:
-      - ".Brewfile*"
+      - "Brewfile*"
 
 jobs:
   validate:
@@ -19,30 +19,30 @@ jobs:
 
       - name: Validate Brewfile syntax
         run: |
-          # Check if .Brewfile exists
-          if [ ! -f ".Brewfile" ]; then
-            echo "Error: .Brewfile not found"
+          # Check if Brewfile exists
+          if [ ! -f "Brewfile" ]; then
+            echo "Error: Brewfile not found"
             exit 1
           fi
 
           # Basic syntax check - will fail on syntax errors
-          brew bundle dump --file=.Brewfile --force --describe 2>&1 | head -n 5
+          brew bundle dump --file=Brewfile --force --describe 2>&1 | head -n 5
 
       - name: List all packages
         run: |
           echo "=== Formulae ==="
-          brew bundle list --brews --file=.Brewfile
+          brew bundle list --brews --file=Brewfile
           echo -e "\n=== Casks ==="
-          brew bundle list --casks --file=.Brewfile
+          brew bundle list --casks --file=Brewfile
           echo -e "\n=== Taps ==="
-          brew bundle list --taps --file=.Brewfile
+          brew bundle list --taps --file=Brewfile
 
       - name: Verify packages exist in Homebrew
         run: |
           echo "Checking if all formulae exist..."
 
           # Extract brew packages - simpler approach
-          BREWS=$(grep -oE 'brew "[^"]+"' .Brewfile | cut -d'"' -f2)
+          BREWS=$(grep -oE 'brew "[^"]+"' Brewfile | cut -d'"' -f2)
 
           if [ -n "$BREWS" ]; then
             FAILED=0
@@ -63,7 +63,7 @@ jobs:
           echo -e "\nChecking if all casks exist..."
 
           # Extract cask packages - simpler approach
-          CASKS=$(grep -oE 'cask "[^"]+"' .Brewfile | cut -d'"' -f2)
+          CASKS=$(grep -oE 'cask "[^"]+"' Brewfile | cut -d'"' -f2)
 
           if [ -n "$CASKS" ]; then
             FAILED=0
@@ -90,7 +90,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install Homebrew dependencies
-        run: brew bundle install --file=.Brewfile
+        run: brew bundle install --file=Brewfile
 
       - name: Verify installation
-        run: brew bundle check --file=.Brewfile
+        run: brew bundle check --file=Brewfile
