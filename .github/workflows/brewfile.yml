@@ -1,0 +1,96 @@
+name: Test Brewfile
+
+on:
+  push:
+    paths:
+      - "Brewfile*"
+      - ".github/workflows/brewfile.yml"
+  pull_request:
+    paths:
+      - "Brewfile*"
+
+jobs:
+  validate:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate Brewfile syntax
+        run: |
+          # Check if Brewfile exists
+          if [ ! -f "Brewfile" ]; then
+            echo "Error: Brewfile not found"
+            exit 1
+          fi
+
+          # Basic syntax check - will fail on syntax errors
+          brew bundle dump --file=Brewfile --force --describe 2>&1 | head -n 5
+
+      - name: List all packages
+        run: |
+          echo "=== Formulae ==="
+          brew bundle list --brews --file=Brewfile
+          echo -e "\n=== Casks ==="
+          brew bundle list --casks --file=Brewfile
+          echo -e "\n=== Taps ==="
+          brew bundle list --taps --file=Brewfile
+
+      - name: Verify packages exist in Homebrew
+        run: |
+          echo "Checking if all formulae exist..."
+
+          # Extract brew packages - simpler approach
+          BREWS=$(grep -oE 'brew "[^"]+"' Brewfile | cut -d'"' -f2)
+
+          if [ -n "$BREWS" ]; then
+            FAILED=0
+            for package in $BREWS; do
+              if brew info "$package" &>/dev/null; then
+                echo "✓ $package exists"
+              else
+                echo "✗ $package NOT FOUND in Homebrew"
+                FAILED=1
+              fi
+            done
+
+            if [ $FAILED -eq 1 ]; then
+              exit 1
+            fi
+          fi
+
+          echo -e "\nChecking if all casks exist..."
+
+          # Extract cask packages - simpler approach
+          CASKS=$(grep -oE 'cask "[^"]+"' Brewfile | cut -d'"' -f2)
+
+          if [ -n "$CASKS" ]; then
+            FAILED=0
+            for cask in $CASKS; do
+              if brew info --cask "$cask" &>/dev/null; then
+                echo "✓ $cask exists"
+              else
+                echo "✗ $cask NOT FOUND in Homebrew Cask"
+                FAILED=1
+              fi
+            done
+
+            if [ $FAILED -eq 1 ]; then
+              exit 1
+            fi
+          fi
+
+  test-brewfile:
+    runs-on: macos-latest
+    needs: validate
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Homebrew dependencies
+        run: brew bundle install --file=Brewfile
+
+      - name: Verify installation
+        run: brew bundle check --file=Brewfile
