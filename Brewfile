@@ -121,6 +121,7 @@ cask 'wireshark-app'# Network analyzer
 cask 'wifiman'      # Network monitoring and troubleshooting
 
 # Security & Encryption
+brew 'gitleaks'     # Git repository security scanner
 brew 'sops'         # Secrets management
 #brew 'bcrypt'      # Encryption
 #brew 'git-crypt'   # Git encryption
