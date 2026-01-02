@@ -157,6 +157,7 @@ cask 'tailscale-app'  # VPN mesh network
 # Utilities
 cask 'keka'         # Archive manager
 cask 'balenaetcher' # USB flash tool
+cask 'monitorcontrol' # Monitor brightness control
 cask 'raspberry-pi-imager' # Raspberry Pi SD card writer
 
 # Creative
