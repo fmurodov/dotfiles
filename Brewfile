@@ -79,6 +79,7 @@ brew 'lazydocker'   # Docker TUI
 brew 'podman'
 brew 'podman-compose'
 brew 'talosctl'     # Talos Kubernetes CLI
+brew 'talhelper'    # Configuration helper for talos clusters
 cask 'podman-desktop'
 brew 'podman-tui'   # Podman terminal UI
 #brew 'kdash'       # Kubernetes TUI
@@ -121,6 +122,7 @@ cask 'wireshark-app'# Network analyzer
 cask 'wifiman'      # Network monitoring and troubleshooting
 
 # Security & Encryption
+brew 'age'          # Simple, modern, secure file encryption
 brew 'gitleaks'     # Git repository security scanner
 brew 'sops'         # Secrets management
 #brew 'bcrypt'      # Encryption
