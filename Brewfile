@@ -91,6 +91,7 @@ brew 'cloudflared'  # Cloudflare Tunnel
 # API & HTTP
 brew 'curlie'       # HTTP client
 cask 'bruno'        # API testing
+brew 'wget'         # Download utility
 
 # Editors & IDEs
 cask 'ghostty'      # Terminal emulator
