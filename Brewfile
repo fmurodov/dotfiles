@@ -156,6 +156,7 @@ cask 'google-chrome'
 # Networking
 cask 'tailscale-app'  # VPN mesh network
 #cask 'mountain-duck' # Cloud storage mounter
+mas 'Discovery - DNS-SD Browser', id: 1381004916
 
 # Utilities
 cask 'keka'         # Archive manager
