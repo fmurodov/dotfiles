@@ -62,10 +62,9 @@ brew 'rclone'       # Cloud storage sync
 # Version Control & Git
 brew 'git'
 brew 'gh'           # GitHub CLI
+brew 'glab'         # GitLab CLI
 brew 'lazygit'      # Git TUI
 #brew 'git-extras'  # Git utilities
-brew 'gh'           # GitHub CLI
-brew 'glab'         # GitLab CLI
 
 # Languages
 brew 'go'
