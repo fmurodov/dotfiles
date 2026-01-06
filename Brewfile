@@ -64,6 +64,8 @@ brew 'git'
 brew 'gh'           # GitHub CLI
 brew 'lazygit'      # Git TUI
 #brew 'git-extras'  # Git utilities
+brew 'gh'           # GitHub CLI
+brew 'glab'         # GitLab CLI
 
 # Languages
 brew 'go'
