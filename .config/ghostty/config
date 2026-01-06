@@ -1,0 +1,6 @@
+window-colorspace = display-p3
+mouse-hide-while-typing = true
+term = xterm-256color
+#theme = dark:catppuccin-frappe,light:catppuccin-latte
+theme = dark:"Apple System Colors",light:"Apple System Colors Light"
+scrollback-limit = 4294967295

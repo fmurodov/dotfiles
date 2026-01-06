@@ -87,6 +87,7 @@ brew 'podman-tui'   # Podman terminal UI
 # DevOps
 brew 'ansible'
 brew 'cloudflared'  # Cloudflare Tunnel
+brew 'opentofu'     # Infrastructure as Code (Terraform alternative)
 
 # API & HTTP
 brew 'curlie'       # HTTP client
@@ -98,6 +99,7 @@ cask 'ghostty'      # Terminal emulator
 cask 'kitty'        # GPU-based terminal emulator
 cask 'visual-studio-code'
 cask 'zed'
+cask 'claude-code'  # AI-powered coding assistant
 #brew 'neovim'
 cask 'arduino-ide'  # Arduino development IDE
 
@@ -288,7 +290,4 @@ vscode 'keesschollaart.vscode-home-assistant'
 vscode 'moshfeu.compare-folders'
 vscode 'ms-vscode.hexeditor'
 vscode 'tatsy.vscode-3d-preview'
-vscode 'github.copilot'
-vscode 'github.copilot-chat'
-
 # EOF

@@ -19,6 +19,9 @@ cd ~/.dotfiles
 # Link Brewfile
 ln -sf ~/.dotfiles/Brewfile ~/.Brewfile
 
+ln -sf ~/.dotfiles/.config/ghostty/config ~/.config/ghostty/config
+ln -sf ~/.dotfiles/.config/zed/settings.json ~/.config/zed/settings.json
+
 # Install packages
 brew bundle --global
 ```
