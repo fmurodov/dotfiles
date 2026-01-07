@@ -201,6 +201,7 @@ brew 'iproute2mac'  # Linux-style networking commands
 #cask 'shottr'      # Screenshot tool
 #cask 'coteditor'   # Text editor
 #cask 'little-snitch' # Firewall
+cask 'mac-mouse-fix' # Mouse utility to add gesture functions
 
 # Quick Look Plugins
 #cask 'qlcolorcode'    # Code with syntax
