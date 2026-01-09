@@ -128,6 +128,7 @@ cask 'wifiman'      # Network monitoring and troubleshooting
 # Security & Encryption
 brew 'age'          # Simple, modern, secure file encryption
 brew 'gitleaks'     # Git repository security scanner
+brew 'git-filter-repo' # Git repository filter
 brew 'sops'         # Secrets management
 #brew 'bcrypt'      # Encryption
 #brew 'git-crypt'   # Git encryption
