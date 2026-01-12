@@ -134,6 +134,7 @@ brew 'age'          # Simple, modern, secure file encryption
 brew 'gitleaks'     # Git repository security scanner
 brew 'git-filter-repo' # Git repository filter
 brew 'sops'         # Secrets management
+brew 'trivy'        # Vulnerability scanner
 #brew 'bcrypt'      # Encryption
 #brew 'git-crypt'   # Git encryption
 #brew 'openssl'     # SSL/TLS toolkit
