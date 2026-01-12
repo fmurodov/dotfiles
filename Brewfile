@@ -72,6 +72,9 @@ brew 'python'
 brew 'gcc'          # C/C++ compiler
 brew 'cmake'        # CMake build system
 
+brew 'ninja'        # Build system
+brew 'dfu-util'     # USB programmer
+
 # Containers & Orchestration
 brew 'docker'
 brew 'docker-compose'
@@ -84,6 +87,7 @@ brew 'talhelper'    # Configuration helper for talos clusters
 cask 'podman-desktop'
 brew 'podman-tui'   # Podman terminal UI
 #brew 'kdash'       # Kubernetes TUI
+brew 'ingress2gateway' # Convert Ingress resources to Gateway API resources
 
 # DevOps
 brew 'ansible'
@@ -183,6 +187,7 @@ cask 'bambu-studio' # 3D printing slicer
 
 # System Tools
 brew 'iproute2mac'  # Linux-style networking commands
+brew 'subnetcalc'   # Subnet calculator
 
 # Window Management
 #brew 'yabai'       # Tiling window manager
@@ -283,6 +288,7 @@ vscode 'davidanson.vscode-markdownlint'
 # Virtualization & Development Tools
 vscode 'bbenoist.vagrant'
 vscode 'marcostazi.vs-code-vagrantfile'
+vscode 'espressif.esp-idf-extension'
 
 # Utilities & Helpers
 vscode 'aaron-bond.better-comments'
