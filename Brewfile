@@ -157,7 +157,6 @@ cask 'zoom'
 #cask 'signal'      # Encrypted messenger
 
 # Browsers
-cask 'chromium'
 cask 'comet'        # AI-powered browser
 cask 'firefox'
 cask 'google-chrome'
