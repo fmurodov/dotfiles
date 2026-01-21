@@ -12,6 +12,7 @@ cask_args appdir: '/Applications'
 # Taps
 tap 'siderolabs/tap'
 tap 'fluxcd/tap'
+tap 'slp/krunkit'
 
 # Mac App Store CLI
 brew 'mas'
@@ -82,6 +83,7 @@ brew 'kubernetes-cli'
 brew 'lazydocker'   # Docker TUI
 brew 'podman'
 brew 'podman-compose'
+brew 'slp/krunkit/krunkit' # libkrun vm for podman
 brew 'talosctl'     # Talos Kubernetes CLI
 brew 'talhelper'    # Configuration helper for talos clusters
 cask 'podman-desktop'
