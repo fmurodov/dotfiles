@@ -79,6 +79,7 @@ brew 'dfu-util'     # USB programmer
 # Containers & Orchestration
 brew 'docker'
 brew 'docker-compose'
+cask 'docker-desktop'
 brew 'kubernetes-cli'
 brew 'lazydocker'   # Docker TUI
 brew 'podman'
@@ -140,7 +141,7 @@ brew 'trivy'        # Vulnerability scanner
 #brew 'bcrypt'      # Encryption
 #brew 'git-crypt'   # Git encryption
 #brew 'openssl'     # SSL/TLS toolkit
-#cask 'gpg-suite'   # PGP encryption
+cask 'gpg-suite'   # PGP encryption
 
 #############################################################
 # Desktop Applications                                      #
