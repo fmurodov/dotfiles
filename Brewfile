@@ -91,6 +91,7 @@ cask 'podman-desktop'
 brew 'podman-tui'   # Podman terminal UI
 #brew 'kdash'       # Kubernetes TUI
 brew 'ingress2gateway' # Convert Ingress resources to Gateway API resources
+cask 'virtualbox'
 
 # DevOps
 brew 'ansible'
@@ -200,6 +201,7 @@ brew 'subnetcalc'   # Subnet calculator
 #cask 'anybar'      # Programmable menubar icons
 #cask 'hiddenbar'   # Hide menubar icons
 #cask 'stats'       # System monitor
+mas 'Itsyhome', id: 6758070650  # menubar HomeKit control
 
 # Utilities
 #cask 'espanso'     # Text expander
