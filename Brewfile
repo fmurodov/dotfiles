@@ -55,7 +55,7 @@ brew 'rclone'       # Cloud storage sync
 #brew 'neofetch'    # System info (alternative)
 #brew 'pipes-sh'    # Screensaver
 #brew 'pv'          # Pipe viewer
-bews 'shellcheck'   # shell linter
+brew 'shellcheck'   # shell linter
 #############################################################
 # Development                                               #
 #############################################################
