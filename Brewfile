@@ -175,6 +175,7 @@ cask 'keka'         # Archive manager
 cask 'balenaetcher' # USB flash tool
 cask 'monitorcontrol' # Monitor brightness control
 cask 'raspberry-pi-imager' # Raspberry Pi SD card writer
+mas 'PDFScanner', id: 410968114 # PDFScanner - Scanning and OCR
 
 # Creative
 #cask 'audacity'    # Audio editor
