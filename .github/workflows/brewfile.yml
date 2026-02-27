@@ -29,6 +29,13 @@ jobs:
           echo -e "\n=== Taps ==="
           brew bundle list --taps --file=Brewfile
 
+      - name: Install taps
+        run: |
+          TAPS=$(grep -oE "tap '[^']+'" Brewfile | cut -d"'" -f2)
+          for t in $TAPS; do
+            brew tap "$t"
+          done
+
       - name: Verify packages exist in Homebrew
         run: |
           echo "Checking if all formulae exist..."
