@@ -41,10 +41,13 @@ brew bundle cleanup --global
 ## What's Included
 
 All packages documented in [Brewfile](Brewfile):
-- Command line tools and utilities
-- Development environments and DevOps tools
-- Desktop applications
-- macOS enhancements
+- Terminal & Shell
+- CLI Tools
+- Development (languages, git, editors)
+- Containers & Kubernetes
+- Infrastructure & Security
+- Desktop Apps
+- VS Code Extensions
 
 ## Resources
 

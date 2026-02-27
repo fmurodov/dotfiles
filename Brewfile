@@ -1,242 +1,180 @@
-##############################################################
-# ~/Brewfile - macOS Package Management                    #
-# Usage: brew bundle --global                                #
-# Cleanup: brew bundle cleanup --global                      #
-# Repo: https://github.com/fmurodov/dotfiles                 #
-##############################################################
+# ~/Brewfile — macOS Package Management
+# Usage: brew bundle --global
+# Cleanup: brew bundle cleanup --global
 
 # Options
 COMPUTER_NAME = `scutil --get LocalHostName`.strip
 cask_args appdir: '/Applications'
 
 # Taps
-tap 'siderolabs/tap'
 tap 'fluxcd/tap'
+tap 'siderolabs/tap'
 tap 'slp/krunkit'
 
-# Mac App Store CLI
+###########################################################
+# Terminal & Shell                                        #
+###########################################################
+
+brew 'fish'
+brew 'tmux'
+cask 'ghostty'
+cask 'kitty'
+
+###########################################################
+# CLI Tools                                               #
+###########################################################
+
+brew 'bat'
+brew 'curlie'
+brew 'difftastic'
+brew 'fastfetch'
+brew 'ffmpeg'
+brew 'fzf'
+brew 'jq'
 brew 'mas'
+brew 'midnight-commander'
+brew 'pipx' if COMPUTER_NAME == 'fmurodov-macbookair'
+brew 'rclone'
+brew 'rsync'
+brew 'shellcheck'
+brew 'tree'
+brew 'watch'
+brew 'wget'
+brew 'yamllint'
+brew 'yq'
 
-#############################################################
-# Command Line Tools                                        #
-#############################################################
+# Recording
+brew 'asciinema'
 
-# Shell & Terminal
-brew 'fish'         # Modern shell
-brew 'tmux'         # Terminal multiplexer
+###########################################################
+# Development                                             #
+###########################################################
 
-# Core Utils
-brew 'bat'          # Better cat with syntax highlighting
-brew 'fzf'          # Fuzzy finder
-brew 'jq'           # JSON processor
-brew 'midnight-commander' # Visual file manager
-brew 'rsync'        # File transfer
-brew 'tree'         # Directory visualization
-brew 'watch'        # Periodic command execution
-brew 'yamllint'     # YAML linter
-brew 'yq'           # YAML processor
-brew 'pipx' if COMPUTER_NAME == 'fmurodov-macbookair' # Python package installer
-
-# Monitoring
-brew 'bmon'         # Bandwidth monitor
-brew 'gping'        # Interactive ping
-brew 'speedtest-cli' # Network speed test
-#brew 'ctop'        # Container metrics
-#brew 'goaccess'    # Web log analyzer
-
-# Productivity
-brew 'asciinema'    # Terminal recording
-brew 'difftastic'   # Diff that understands syntax
-brew 'fastfetch'    # System info
-brew 'rclone'       # Cloud storage sync
-#brew 'exiftool'    # EXIF metadata editor
-#brew 'figlet'      # ASCII art text
-#brew 'lolcat'      # Rainbow output
-#brew 'neofetch'    # System info (alternative)
-#brew 'pipes-sh'    # Screensaver
-#brew 'pv'          # Pipe viewer
-brew 'shellcheck'   # shell linter
-#############################################################
-# Development                                               #
-#############################################################
-
-# Version Control & Git
+# Version Control
 brew 'git'
-brew 'gh'           # GitHub CLI
-brew 'glab'         # GitLab CLI
-brew 'lazygit'      # Git TUI
-#brew 'git-extras'  # Git utilities
+brew 'gh'
+brew 'glab'
+brew 'lazygit'
 
-# Languages
+# Languages & Build
+brew 'cmake'
+brew 'dfu-util'
+brew 'gcc'
 brew 'go'
+brew 'ninja'
 brew 'python'
 brew 'uv'
-brew 'gcc'          # C/C++ compiler
-brew 'cmake'        # CMake build system
 
-brew 'ninja'        # Build system
-brew 'dfu-util'     # USB programmer
+# Editors
+cask 'arduino-ide'
+cask 'claude-code'
+cask 'visual-studio-code'
+cask 'zed'
 
-# Containers & Orchestration
+# API & Database
+cask 'bruno'
+cask 'tableplus'
+
+###########################################################
+# Containers & Kubernetes                                 #
+###########################################################
+
+# Docker
 brew 'docker'
 brew 'docker-compose'
+brew 'lazydocker'
 cask 'docker-desktop'
-brew 'kubernetes-cli'
-brew 'lazydocker'   # Docker TUI
+
+# Podman
 brew 'podman'
 brew 'podman-compose'
-brew 'slp/krunkit/krunkit' # libkrun vm for podman
-brew 'talosctl'     # Talos Kubernetes CLI
-brew 'talhelper'    # Configuration helper for talos clusters
+brew 'podman-tui'
+brew 'slp/krunkit/krunkit'
 cask 'podman-desktop'
-brew 'podman-tui'   # Podman terminal UI
-#brew 'kdash'       # Kubernetes TUI
-brew 'ingress2gateway' # Convert Ingress resources to Gateway API resources
+
+# VMs
 cask 'virtualbox'
+
+# Kubernetes
+brew 'cilium-cli'
+brew 'fluxcd/tap/flux'
+brew 'helm'
+brew 'ingress2gateway'
+brew 'k9s'
+brew 'kubecm'
+brew 'kubeconform'
+brew 'kubectx'
+brew 'kubernetes-cli'
+brew 'kustomize'
+brew 'stern'
+brew 'talhelper'
+brew 'talosctl'
+cask 'freelens'
+
+###########################################################
+# Infrastructure & Security                               #
+###########################################################
 
 # DevOps
 brew 'ansible'
-brew 'cloudflared'  # Cloudflare Tunnel
-brew 'opentofu'     # Infrastructure as Code (Terraform alternative)
+brew 'cloudflared'
+brew 'opentofu'
 
-# API & HTTP
-brew 'curlie'       # HTTP client
-cask 'bruno'        # API testing
-brew 'wget'         # Download utility
-
-# Editors & IDEs
-cask 'ghostty'      # Terminal emulator
-cask 'kitty'        # GPU-based terminal emulator
-cask 'visual-studio-code'
-cask 'zed'
-cask 'claude-code'  # AI-powered coding assistant
-#brew 'neovim'
-cask 'arduino-ide'  # Arduino development IDE
-
-# Database
-cask 'tableplus'    # Database GUI
-
-# Kubernetes
-brew 'cilium-cli'   # Cilium client
-cask 'freelens'     # Kubernetes IDE
-brew 'stern'        # Multi-pod log tailing
-brew 'fluxcd/tap/flux' # GitOps toolkit
-brew 'helm'         # Kubernetes package manager
-brew 'k9s'          # Kubernetes CLI
-brew 'kubecm'       # Kubeconfig manager
-brew 'kubeconform'  # Kubernetes manifest validator
-brew 'kubectx'      # Context and namespace switcher
-brew 'kustomize'    # Kubernetes configuration customization
-
-# Network & Security
-brew 'nmap'         # Port scanner
-cask 'wireshark-app'# Network analyzer
-#brew 'bettercap'   # Network scanner
-cask 'wifiman'      # Network monitoring and troubleshooting
+# Network
+brew 'bmon'
+brew 'gping'
+brew 'iproute2mac'
+brew 'nmap'
+brew 'speedtest-cli'
+brew 'subnetcalc'
+cask 'tailscale-app'
+cask 'wifiman'
+cask 'wireshark-app'
 
 # Security & Encryption
-brew 'age'          # Simple, modern, secure file encryption
-brew 'gitleaks'     # Git repository security scanner
-brew 'git-filter-repo' # Git repository filter
-brew 'sops'         # Secrets management
-brew 'trivy'        # Vulnerability scanner
-#brew 'bcrypt'      # Encryption
-#brew 'git-crypt'   # Git encryption
-#brew 'openssl'     # SSL/TLS toolkit
-cask 'gpg-suite'   # PGP encryption
+brew 'age'
+brew 'git-filter-repo'
+brew 'gitleaks'
+brew 'sops'
+brew 'trivy'
+cask 'gpg-suite'
 
-#############################################################
-# Desktop Applications                                      #
-#############################################################
+###########################################################
+# Desktop Apps                                            #
+###########################################################
 
 # Productivity
-cask '1password' if COMPUTER_NAME == 'fmurodov-pro' # Password manager
-cask 'raycast', args: { require_sha: false } # Launcher
+cask '1password' if COMPUTER_NAME == 'fmurodov-pro'
+cask 'raycast', args: { require_sha: false }
 
 # Communication
-cask 'discord'      # Voice and text chat
+cask 'discord'
 cask 'slack' if COMPUTER_NAME == 'fmurodov-pro'
 cask 'telegram'
 cask 'whatsapp'
 cask 'zoom'
-#cask 'signal'      # Encrypted messenger
 
 # Browsers
-cask 'comet'        # AI-powered browser
+cask 'comet'
 cask 'firefox'
 cask 'google-chrome'
 
-# Networking
-cask 'tailscale-app'  # VPN mesh network
-#cask 'mountain-duck' # Cloud storage mounter
-mas 'Discovery - DNS-SD Browser', id: 1381004916
-
 # Utilities
-cask 'keka'         # Archive manager
-cask 'balenaetcher' # USB flash tool
-cask 'monitorcontrol' # Monitor brightness control
-cask 'raspberry-pi-imager' # Raspberry Pi SD card writer
-mas 'PDFScanner', id: 410968114 # PDFScanner - Scanning and OCR
+cask 'balenaetcher'
+cask 'keka'
+cask 'mac-mouse-fix'
+cask 'monitorcontrol'
+cask 'raspberry-pi-imager'
+mas 'Discovery - DNS-SD Browser', id: 1381004916
+mas 'Itsyhome', id: 6758070650
+mas 'PDFScanner', id: 410968114
 
 # Creative
-#cask 'audacity'    # Audio editor
-cask 'bambu-studio' # 3D printing slicer
-#cask 'gimp'        # Image editor
-#cask 'inkscape'    # Vector graphics
-#cask 'obs'         # Screen recording
-brew 'ffmpeg'       # Media encoder/decoder
-#brew 'handbrake'   # Video transcoder
-#cask 'shotcut'     # Video editor
+cask 'bambu-studio'
 
-#############################################################
-# macOS Enhancements                                        #
-#############################################################
-
-# System Tools
-brew 'iproute2mac'  # Linux-style networking commands
-brew 'subnetcalc'   # Subnet calculator
-
-# Window Management
-#brew 'yabai'       # Tiling window manager
-#brew 'skhd'        # Hotkey daemon
-
-# Menubar
-#cask 'anybar'      # Programmable menubar icons
-#cask 'hiddenbar'   # Hide menubar icons
-#cask 'stats'       # System monitor
-mas 'Itsyhome', id: 6758070650  # menubar HomeKit control
-
-# Utilities
-#cask 'espanso'     # Text expander
-#brew 'lporg'       # Launchpad backup
-#brew 'm-cli'       # macOS management CLI
-#cask 'openinterminal' # Terminal from Finder
-#cask 'santa'       # Binary authorization
-#cask 'shottr'      # Screenshot tool
-#cask 'coteditor'   # Text editor
-#cask 'little-snitch' # Firewall
-cask 'mac-mouse-fix' # Mouse utility to add gesture functions
-
-# Quick Look Plugins
-#cask 'qlcolorcode'    # Code with syntax
-#cask 'qlimagesize'    # Image dimensions
-#cask 'qlmarkdown'     # Markdown files
-#cask 'qlprettypatch'  # Patches/diffs
-#cask 'qlstephen'      # Plain text files
-#cask 'qlvideo'        # Video previews
-#cask 'quicklook-csv'  # CSV files
-#cask 'quicklook-json', args: { require_sha: false } # JSON
-#cask 'quicklookapk', args: { require_sha: false }   # APK files
-#cask 'webpquicklook', args: { require_sha: false }  # WebP images
-
-# Fonts
-#tap 'homebrew/cask-fonts'
-#cask 'font-fira-code'
-#cask 'font-hack'
-#cask 'font-inconsolata'
-#cask 'font-meslo-lg-nerd-font'
-
-# Visual Studio Code Extensions
+###########################################################
+# VS Code Extensions                                     #
+###########################################################
 
 # Git & Version Control
 vscode 'donjayamanne.githistory'
@@ -256,20 +194,14 @@ vscode 'ms-vscode-remote.remote-ssh'
 vscode 'ms-vscode-remote.remote-ssh-edit'
 vscode 'ms-vscode.remote-explorer'
 
-# Languages - Go
+# Languages
 vscode 'golang.go'
-
-# Languages - Python
 vscode 'ms-python.python'
-
-# Languages - C/C++
 vscode 'ms-vscode.cmake-tools'
 vscode 'ms-vscode.cpptools'
 vscode 'ms-vscode.cpptools-extension-pack'
 vscode 'ms-vscode.cpptools-themes'
 vscode 'ms-vscode.makefile-tools'
-
-# Languages - Java
 vscode 'redhat.java'
 
 # DevOps & Infrastructure
@@ -285,20 +217,20 @@ vscode 'timonwong.shellcheck'
 # Configuration & Data Formats
 vscode 'mechatroner.rainbow-csv'
 vscode 'mikestead.dotenv'
-vscode 'redhat.vscode-yaml'
 vscode 'quicktype.quicktype'
+vscode 'redhat.vscode-yaml'
 vscode 'zainchen.json'
 
-# Markdown & Documentation
+# Documentation
 vscode 'bierner.markdown-mermaid'
 vscode 'davidanson.vscode-markdownlint'
 
-# Virtualization & Development Tools
+# Embedded & Virtualization
 vscode 'bbenoist.vagrant'
-vscode 'marcostazi.vs-code-vagrantfile'
 vscode 'espressif.esp-idf-extension'
+vscode 'marcostazi.vs-code-vagrantfile'
 
-# Utilities & Helpers
+# Utilities
 vscode 'aaron-bond.better-comments'
 vscode 'adamhartford.vscode-base64'
 vscode 'ibm.output-colorizer'
@@ -307,4 +239,3 @@ vscode 'keesschollaart.vscode-home-assistant'
 vscode 'moshfeu.compare-folders'
 vscode 'ms-vscode.hexeditor'
 vscode 'tatsy.vscode-3d-preview'
-# EOF
