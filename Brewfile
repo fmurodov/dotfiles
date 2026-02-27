@@ -70,6 +70,7 @@ brew 'lazygit'      # Git TUI
 # Languages
 brew 'go'
 brew 'python'
+brew 'uv'
 brew 'gcc'          # C/C++ compiler
 brew 'cmake'        # CMake build system
 
@@ -183,6 +184,7 @@ cask 'bambu-studio' # 3D printing slicer
 #cask 'gimp'        # Image editor
 #cask 'inkscape'    # Vector graphics
 #cask 'obs'         # Screen recording
+brew 'ffmpeg'       # Media encoder/decoder
 #brew 'handbrake'   # Video transcoder
 #cask 'shotcut'     # Video editor
 
