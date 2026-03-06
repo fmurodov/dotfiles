@@ -67,6 +67,7 @@ brew 'uv'
 
 # Editors
 cask 'arduino-ide'
+cask 'claude'
 cask 'claude-code'
 cask 'visual-studio-code'
 cask 'zed'
@@ -171,6 +172,7 @@ mas 'PDFScanner', id: 410968114
 
 # Creative
 cask 'bambu-studio'
+cask 'orcaslicer'
 
 ###########################################################
 # VS Code Extensions                                     #
