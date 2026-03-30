@@ -111,6 +111,7 @@ brew 'stern'
 brew 'talhelper'
 brew 'talosctl'
 cask 'freelens'
+cask 'headlamp'
 
 ###########################################################
 # Infrastructure & Security                               #
@@ -157,7 +158,7 @@ cask 'zoom'
 
 # Browsers
 cask 'comet'
-cask 'firefox'
+cask 'firefox@beta'
 cask 'google-chrome'
 
 # Utilities
@@ -166,6 +167,7 @@ cask 'keka'
 cask 'mac-mouse-fix'
 cask 'monitorcontrol'
 cask 'raspberry-pi-imager'
+cask 'xquartz'
 mas 'Discovery - DNS-SD Browser', id: 1381004916
 mas 'Itsyhome', id: 6758070650
 mas 'PDFScanner', id: 410968114
