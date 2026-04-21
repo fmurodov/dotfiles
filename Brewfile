@@ -71,6 +71,7 @@ cask 'claude'
 cask 'claude-code'
 cask 'visual-studio-code'
 cask 'zed'
+brew 'neovim'
 
 # API & Database
 cask 'bruno'
@@ -126,12 +127,14 @@ brew 'opentofu'
 brew 'bmon'
 brew 'gping'
 brew 'iproute2mac'
+brew 'mtr'
 brew 'nmap'
 brew 'speedtest-cli'
 brew 'subnetcalc'
 cask 'tailscale-app'
 cask 'wifiman'
 cask 'wireshark-app'
+mas 'WireGuard', id: 1451685025
 
 # Security & Encryption
 brew 'age'
@@ -168,6 +171,7 @@ cask 'mac-mouse-fix'
 cask 'monitorcontrol'
 cask 'raspberry-pi-imager'
 cask 'xquartz'
+cask 'cyberduck'
 mas 'Discovery - DNS-SD Browser', id: 1381004916
 mas 'Itsyhome', id: 6758070650
 mas 'PDFScanner', id: 410968114
