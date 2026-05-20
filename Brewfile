@@ -67,8 +67,6 @@ brew 'uv'
 
 # Editors
 cask 'arduino-ide'
-cask 'claude'
-cask 'claude-code'
 cask 'visual-studio-code'
 cask 'zed'
 brew 'neovim'
@@ -76,6 +74,11 @@ brew 'neovim'
 # API & Database
 cask 'bruno'
 cask 'tableplus'
+
+## AI and LLM
+cask 'claude'           # Anthropic's official Claude AI desktop app
+cask 'claude-code'      # Anthropic's terminal-based AI coding assistant
+cask 'lm-studio'        # Discover, download, and run local LLMs
 
 ###########################################################
 # Containers & Kubernetes                                 #
@@ -172,6 +175,8 @@ cask 'monitorcontrol'
 cask 'raspberry-pi-imager'
 cask 'xquartz'
 cask 'cyberduck'
+cask 'mqttx'
+cask 'google-drive'
 mas 'Discovery - DNS-SD Browser', id: 1381004916
 mas 'Itsyhome', id: 6758070650
 mas 'PDFScanner', id: 410968114
