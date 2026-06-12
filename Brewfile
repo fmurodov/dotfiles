@@ -9,7 +9,6 @@ cask_args appdir: '/Applications'
 # Taps
 tap 'fluxcd/tap'       # Flux CD GitOps toolkit
 tap 'siderolabs/tap'   # Talos Linux tooling
-tap 'slp/krunkit'      # macOS virtualization with libkrun
 
 ###########################################################
 # Terminal & Shell                                        #
@@ -92,7 +91,6 @@ cask 'docker-desktop'    # Docker GUI for building and sharing containers
 brew 'podman'                  # Daemonless OCI container and pod manager
 brew 'podman-compose'          # docker-compose alternative using Podman
 brew 'podman-tui'              # Podman terminal user interface
-brew 'slp/krunkit/krunkit'     # CLI to start VMs using libkrun on macOS
 cask 'podman-desktop'          # GUI for browsing and managing containers
 
 # VMs
