@@ -37,6 +37,7 @@ brew 'pipx' if COMPUTER_NAME == 'fmurodov-macbookair' # Run Python CLI tools in 
 brew 'rclone'              # Rsync for cloud storage
 brew 'rsync'               # Fast incremental file transfer utility
 brew 'shellcheck'          # Static analysis and lint tool for shell scripts
+brew 'swaks'               # Swiss Army knife for SMTP testing
 brew 'tree'                # Display directories as trees
 brew 'watch'               # Execute a program periodically, fullscreen output
 brew 'wget'                # Internet file retriever
@@ -176,6 +177,7 @@ cask 'monitorcontrol'  # Control external monitor brightness and volume
 # Hardware & Imaging
 cask 'balenaetcher'         # Flash OS images to SD cards and USB drives
 cask 'raspberry-pi-imager'  # Write OS images to microSD for Raspberry Pi
+cask 'qflipper'             # Companion app for Flipper Zero devices
 
 # IoT & Protocol
 cask 'mqttx'   # Cross-platform MQTT 5.0 desktop client
