@@ -7,6 +7,7 @@ COMPUTER_NAME = `scutil --get LocalHostName`.strip
 cask_args appdir: '/Applications'
 
 # Taps
+tap 'anomalyco/tap'    # Opencode
 tap 'fluxcd/tap'       # Flux CD GitOps toolkit
 tap 'siderolabs/tap'   # Talos Linux tooling
 
@@ -35,6 +36,7 @@ brew 'mas'                 # Mac App Store command-line interface
 brew 'midnight-commander'  # Terminal-based visual file manager
 brew 'pipx' if COMPUTER_NAME == 'fmurodov-macbookair' # Run Python CLI tools in isolated envs
 brew 'rclone'              # Rsync for cloud storage
+brew 'icann-rdap'          # Client for the Registry Data Access Protocol (RDAP)
 brew 'rsync'               # Fast incremental file transfer utility
 brew 'shellcheck'          # Static analysis and lint tool for shell scripts
 brew 'swaks'               # Swiss Army knife for SMTP testing
@@ -42,6 +44,7 @@ brew 'tree'                # Display directories as trees
 brew 'watch'               # Execute a program periodically, fullscreen output
 brew 'wget'                # Internet file retriever
 brew 'yamllint'            # Linter for YAML files
+brew 'salt-lint'           # Linter for SaltStack
 brew 'yq'                  # Process YAML, JSON, XML, CSV from the CLI
 
 ###########################################################
@@ -74,9 +77,11 @@ cask 'bruno'       # Open-source API explorer and testing IDE
 cask 'tableplus'   # Native GUI for relational databases
 
 # AI & LLM
-cask 'claude'        # Anthropic's official Claude AI desktop app
-cask 'claude-code'   # Anthropic's terminal-based AI coding assistant
-cask 'lm-studio'     # Discover, download, and run local LLMs
+cask 'claude'                 # Anthropic's official Claude AI desktop app
+cask 'claude-code'            # Anthropic's terminal-based AI coding assistant
+cask 'lm-studio'              # Discover, download, and run local LLMs
+cask 'lm-studio'              # Discover, download, and run local LLMs
+brew 'anomalyco/tap/opencode' # Open AI coding agent
 
 ###########################################################
 # Containers & Kubernetes                                 #
@@ -150,8 +155,9 @@ cask 'gpg-suite'        # GPG tools for encrypting emails and files
 ###########################################################
 
 # Productivity
-cask '1password' if COMPUTER_NAME == 'fmurodov-pro'   # Password manager
-cask 'raycast', args: { require_sha: false }           # Keystroke-driven launcher and productivity tool
+cask '1password' if COMPUTER_NAME == 'fmurodov-pro'     # Password manager
+cask '1password-cli' if COMPUTER_NAME == 'fmurodov-pro' # Command-line interface for 1Password
+cask 'raycast', args: { require_sha: false }            # Keystroke-driven launcher and productivity tool
 
 # Communication
 cask 'discord'                                 # Voice and text chat
