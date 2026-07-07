@@ -7,9 +7,9 @@ COMPUTER_NAME = `scutil --get LocalHostName`.strip
 cask_args appdir: '/Applications'
 
 # Taps
-tap 'anomalyco/tap'    # Opencode
-tap 'fluxcd/tap'       # Flux CD GitOps toolkit
-tap 'siderolabs/tap'   # Talos Linux tooling
+tap 'anomalyco/tap', trusted: true    # Opencode
+tap 'fluxcd/tap', trusted: true       # Flux CD GitOps toolkit
+tap 'siderolabs/tap', trusted: true   # Talos Linux tooling
 
 ###########################################################
 # Terminal & Shell                                        #
@@ -77,11 +77,11 @@ cask 'bruno'       # Open-source API explorer and testing IDE
 cask 'tableplus'   # Native GUI for relational databases
 
 # AI & LLM
-cask 'claude'                 # Anthropic's official Claude AI desktop app
-cask 'claude-code'            # Anthropic's terminal-based AI coding assistant
-cask 'lm-studio'              # Discover, download, and run local LLMs
-cask 'lm-studio'              # Discover, download, and run local LLMs
-brew 'anomalyco/tap/opencode' # Open AI coding agent
+cask 'claude'                                 # Anthropic's official Claude AI desktop app
+cask 'claude-code'                            # Anthropic's terminal-based AI coding assistant
+cask 'lm-studio'                              # Discover, download, and run local LLMs
+cask 'lm-studio'                              # Discover, download, and run local LLMs
+brew 'anomalyco/tap/opencode', trusted: true  # Open AI coding agent
 
 ###########################################################
 # Containers & Kubernetes                                 #
@@ -103,21 +103,21 @@ cask 'podman-desktop'          # GUI for browsing and managing containers
 cask 'virtualbox'   # Virtualizer for ARM64 hardware
 
 # Kubernetes
-brew 'cilium-cli'          # CLI to manage Kubernetes clusters running Cilium
-brew 'fluxcd/tap/flux'     # GitOps toolkit for Kubernetes (Flux CLI)
-brew 'helm'                # Kubernetes package manager
-brew 'ingress2gateway'     # Convert Ingress resources to Gateway API
-brew 'k9s'                 # Terminal UI to manage Kubernetes clusters
-brew 'kubecm'              # Manage and switch between kubeconfigs
-brew 'kubeconform'         # Fast Kubernetes manifest validator
-brew 'kubectx'             # Switch kubectl contexts and namespaces
-brew 'kubernetes-cli'      # Kubernetes command-line tool (kubectl)
-brew 'kustomize'           # Template-free Kubernetes YAML customization
-brew 'stern'               # Tail logs across multiple pods and containers
-brew 'talhelper'           # Configuration helper for Talos clusters
-brew 'talosctl'            # CLI for managing Talos Linux Kubernetes nodes
-cask 'freelens'            # Open-source Kubernetes IDE
-cask 'headlamp'            # Web-based Kubernetes dashboard
+brew 'cilium-cli'                      # CLI to manage Kubernetes clusters running Cilium
+brew 'fluxcd/tap/flux', trusted: true  # GitOps toolkit for Kubernetes (Flux CLI)
+brew 'helm'                            # Kubernetes package manager
+brew 'ingress2gateway'                 # Convert Ingress resources to Gateway API
+brew 'k9s'                             # Terminal UI to manage Kubernetes clusters
+brew 'kubecm'                          # Manage and switch between kubeconfigs
+brew 'kubeconform'                     # Fast Kubernetes manifest validator
+brew 'kubectx'                         # Switch kubectl contexts and namespaces
+brew 'kubernetes-cli'                  # Kubernetes command-line tool (kubectl)
+brew 'kustomize'                       # Template-free Kubernetes YAML customization
+brew 'stern'                           # Tail logs across multiple pods and containers
+brew 'talhelper'                       # Configuration helper for Talos clusters
+brew 'talosctl'                        # CLI for managing Talos Linux Kubernetes nodes
+cask 'freelens'                        # Open-source Kubernetes IDE
+cask 'headlamp'                        # Web-based Kubernetes dashboard
 
 ###########################################################
 # Infrastructure & Security                               #
