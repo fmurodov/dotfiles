@@ -31,6 +31,7 @@ brew 'difftastic'          # Syntax-aware structural diff tool
 brew 'fastfetch'           # Fast system info fetcher (neofetch alternative)
 brew 'ffmpeg'              # Record, convert, and stream audio and video
 brew 'fzf'                 # Command-line fuzzy finder
+brew 'gnu-tar'             # GNU version of the tar (gtar) archiving utility
 brew 'jq'                  # Lightweight command-line JSON processor
 brew 'mas'                 # Mac App Store command-line interface
 brew 'midnight-commander'  # Terminal-based visual file manager
@@ -68,6 +69,7 @@ brew 'uv'        # Extremely fast Python package manager, written in Rust
 
 # Editors
 brew 'neovim'                 # Extensible Vim-fork focused on agility
+cask 'obsidian'               # Markdown knowledge base
 cask 'arduino-ide'            # Electronics prototyping IDE
 cask 'visual-studio-code'     # Open-source code editor by Microsoft
 cask 'zed'                    # Multiplayer code editor
@@ -94,10 +96,10 @@ brew 'lazydocker'        # Terminal UI for Docker management
 cask 'docker-desktop'    # Docker GUI for building and sharing containers
 
 # Podman
-brew 'podman'                  # Daemonless OCI container and pod manager
-brew 'podman-compose'          # docker-compose alternative using Podman
-brew 'podman-tui'              # Podman terminal user interface
-cask 'podman-desktop'          # GUI for browsing and managing containers
+# brew 'podman'                  # Daemonless OCI container and pod manager
+# brew 'podman-compose'          # docker-compose alternative using Podman
+# brew 'podman-tui'              # Podman terminal user interface
+# cask 'podman-desktop'          # GUI for browsing and managing containers
 
 # VMs
 cask 'virtualbox'   # Virtualizer for ARM64 hardware
