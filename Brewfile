@@ -107,6 +107,7 @@ cask 'virtualbox'   # Virtualizer for ARM64 hardware
 
 # Kubernetes
 brew 'cilium-cli'                      # CLI to manage Kubernetes clusters running Cilium
+brew 'hubble'                          # Network Observability for Kubernetes using eBPF
 brew 'fluxcd/tap/flux', trusted: true  # GitOps toolkit for Kubernetes (Flux CLI)
 brew 'helm'                            # Kubernetes package manager
 brew 'ingress2gateway'                 # Convert Ingress resources to Gateway API
