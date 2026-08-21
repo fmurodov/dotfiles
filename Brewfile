@@ -7,9 +7,10 @@ COMPUTER_NAME = `scutil --get LocalHostName`.strip
 cask_args appdir: '/Applications'
 
 # Taps
-tap 'anomalyco/tap', trusted: true    # Opencode
-tap 'fluxcd/tap', trusted: true       # Flux CD GitOps toolkit
-tap 'siderolabs/tap', trusted: true   # Talos Linux tooling
+tap 'anomalyco/tap', trusted: true        # Opencode
+tap 'fluxcd/tap', trusted: true           # Flux CD GitOps toolkit
+tap 'siderolabs/tap', trusted: true       # Talos Linux tooling
+tap 'jsdelivr/globalping', trusted: true  # Talos Linux tooling
 
 ###########################################################
 # Terminal & Shell                                        #
@@ -115,6 +116,7 @@ brew 'kubeconform'                     # Fast Kubernetes manifest validator
 brew 'kubectx'                         # Switch kubectl contexts and namespaces
 brew 'kubernetes-cli'                  # Kubernetes command-line tool (kubectl)
 brew 'kustomize'                       # Template-free Kubernetes YAML customization
+brew 'kubecolor'                       # Colorize kubectl output
 brew 'stern'                           # Tail logs across multiple pods and containers
 brew 'talhelper'                       # Configuration helper for Talos clusters
 brew 'talosctl'                        # CLI for managing Talos Linux Kubernetes nodes
@@ -127,12 +129,14 @@ cask 'headlamp'                        # Web-based Kubernetes dashboard
 
 # DevOps
 brew 'ansible'      # Agentless IT automation and configuration management
+brew 'ansible-lint' # Checks ansible playbooks for practices and behaviour
 brew 'cloudflared'  # Cloudflare Tunnel client
 brew 'opentofu'     # Open-source Terraform-compatible IaC tool
 
 # Network
 brew 'bmon'                                     # Network interface bandwidth monitor
 brew 'gping'                                    # Ping with a live graph
+brew 'globalping'                               # GlobalPing CLI
 brew 'iproute2mac'                              # macOS wrapper for Linux ip commands
 brew 'mtr'                                      # Combines traceroute and ping in one tool
 brew 'nmap'                                     # Network exploration and port scanner
