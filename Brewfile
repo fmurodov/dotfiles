@@ -186,6 +186,7 @@ cask 'keka'           # File archiver and extractor
 # System & Input
 cask 'mac-mouse-fix'   # Add gestures and smooth scrolling to third-party mice
 cask 'monitorcontrol'  # Control external monitor brightness and volume
+cask 'daisydisk'       # Disk space visualiser
 
 # Hardware & Imaging
 cask 'balenaetcher'         # Flash OS images to SD cards and USB drives
