@@ -10,7 +10,7 @@ cask_args appdir: '/Applications'
 tap 'anomalyco/tap', trusted: true        # Opencode
 tap 'fluxcd/tap', trusted: true           # Flux CD GitOps toolkit
 tap 'siderolabs/tap', trusted: true       # Talos Linux tooling
-tap 'jsdelivr/globalping', trusted: true  # Talos Linux tooling
+tap 'jsdelivr/globalping', trusted: true  # Globalping cli
 
 ###########################################################
 # Terminal & Shell                                        #
@@ -123,6 +123,7 @@ brew 'talhelper'                       # Configuration helper for Talos clusters
 brew 'talosctl'                        # CLI for managing Talos Linux Kubernetes nodes
 cask 'freelens'                        # Open-source Kubernetes IDE
 cask 'headlamp'                        # Web-based Kubernetes dashboard
+brew 'popeye'                          # Kubernetes Live Cluster Linter
 
 ###########################################################
 # Infrastructure & Security                               #
@@ -133,6 +134,7 @@ brew 'ansible'      # Agentless IT automation and configuration management
 brew 'ansible-lint' # Checks ansible playbooks for practices and behaviour
 brew 'cloudflared'  # Cloudflare Tunnel client
 brew 'opentofu'     # Open-source Terraform-compatible IaC tool
+brew 'oci-cli'      # Oracle Cloud Infrastructure CLI
 
 # Network
 brew 'bmon'                                     # Network interface bandwidth monitor
