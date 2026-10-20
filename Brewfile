@@ -11,6 +11,7 @@ tap 'anomalyco/tap', trusted: true        # Opencode
 tap 'fluxcd/tap', trusted: true           # Flux CD GitOps toolkit
 tap 'siderolabs/tap', trusted: true       # Talos Linux tooling
 tap 'jsdelivr/globalping', trusted: true  # Globalping cli
+tap 'jreznik/meshy', 'https://codeberg.org/jreznik/homebrew-meshy', trusted: true  # Meshy
 
 ###########################################################
 # Terminal & Shell                                        #
@@ -78,7 +79,7 @@ cask 'zed'                    # Multiplayer code editor
 # API & Database
 cask 'bruno'       # Open-source API explorer and testing IDE
 cask 'tableplus'   # Native GUI for relational databases
-
+cask 'tablepro'    # Native database client for many database types
 # AI & LLM
 cask 'claude'                                 # Anthropic's official Claude AI desktop app
 cask 'claude-code'                            # Anthropic's terminal-based AI coding assistant
@@ -104,6 +105,8 @@ cask 'docker-desktop'    # Docker GUI for building and sharing containers
 
 # VMs
 cask 'virtualbox'   # Virtualizer for ARM64 hardware
+cask 'utm'          # Virtual machines UI using QEMU
+cask 'gns3'         # Graphical Network Simulator 3
 
 # Kubernetes
 brew 'cilium-cli'                      # CLI to manage Kubernetes clusters running Cilium
@@ -189,11 +192,13 @@ cask 'keka'           # File archiver and extractor
 cask 'mac-mouse-fix'   # Add gestures and smooth scrolling to third-party mice
 cask 'monitorcontrol'  # Control external monitor brightness and volume
 cask 'daisydisk'       # Disk space visualiser
+cask 'homebrew-app'    # Homebrew's GUI
 
 # Hardware & Imaging
 cask 'balenaetcher'         # Flash OS images to SD cards and USB drives
 cask 'raspberry-pi-imager'  # Write OS images to microSD for Raspberry Pi
 cask 'qflipper'             # Companion app for Flipper Zero devices
+cask 'meshy'                # Desktop client for MeshCore LoRa mesh devices
 
 # IoT & Protocol
 cask 'mqttx'   # Cross-platform MQTT 5.0 desktop client
