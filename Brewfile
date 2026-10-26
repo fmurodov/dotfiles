@@ -11,6 +11,7 @@ tap 'anomalyco/tap', trusted: true        # Opencode
 tap 'fluxcd/tap', trusted: true           # Flux CD GitOps toolkit
 tap 'siderolabs/tap', trusted: true       # Talos Linux tooling
 tap 'jsdelivr/globalping', trusted: true  # Globalping cli
+tap 'netbirdio/tap', trusted: true        # NetBird
 tap 'jreznik/meshy', 'https://codeberg.org/jreznik/homebrew-meshy', trusted: true  # Meshy
 
 ###########################################################
@@ -83,6 +84,7 @@ cask 'tablepro'    # Native database client for many database types
 # AI & LLM
 cask 'claude'                                 # Anthropic's official Claude AI desktop app
 cask 'claude-code'                            # Anthropic's terminal-based AI coding assistant
+cask 'google-gemini'                          # Native desktop AI assistant from Google
 cask 'lm-studio'                              # Discover, download, and run local LLMs
 cask 'lm-studio'                              # Discover, download, and run local LLMs
 brew 'anomalyco/tap/opencode', trusted: true  # Open AI coding agent
@@ -148,7 +150,7 @@ brew 'mtr'                                      # Combines traceroute and ping i
 brew 'nmap'                                     # Network exploration and port scanner
 brew 'speedtest-cli'                            # Speedtest.net bandwidth test from CLI
 brew 'subnetcalc'                               # IPv4/IPv6 subnet calculator
-cask 'tailscale-app'                            # Mesh VPN based on WireGuard
+brew 'netbirdio/tap/netbird'                    # NetBird WireGuard mesh VPN client (CLI)
 cask 'wifiman'                                  # Wi-Fi network monitoring tool
 cask 'wireshark-app'                            # Network protocol analyzer
 mas 'Discovery - DNS-SD Browser', id: 1381004916 # Browse mDNS/DNS-SD services on the network
